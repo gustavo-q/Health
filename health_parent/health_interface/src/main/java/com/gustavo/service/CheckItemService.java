@@ -4,6 +4,8 @@ import com.gustavo.entity.PageResult;
 import com.gustavo.entity.QueryPageBean;
 import com.gustavo.pojo.CheckItem;
 
+import java.util.List;
+
 //服务接口
 public interface CheckItemService {
 
@@ -16,4 +18,6 @@ public interface CheckItemService {
     public CheckItem findById(Integer id);
 
     public void edit(CheckItem checkItem);
+
+    public List<CheckItem> findAll();
 }

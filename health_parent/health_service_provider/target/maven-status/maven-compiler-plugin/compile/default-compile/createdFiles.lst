@@ -1,2 +1,4 @@
 com/gustavo/dao/CheckItemDao.class
+com/gustavo/service/impl/CheckGroupServiceImpl.class
 com/gustavo/service/impl/CheckItemServiceImpl.class
+com/gustavo/dao/CheckGroupDao.class

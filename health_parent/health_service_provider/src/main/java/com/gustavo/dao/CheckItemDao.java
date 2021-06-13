@@ -4,6 +4,8 @@ package com.gustavo.dao;
 import com.github.pagehelper.Page;
 import com.gustavo.pojo.CheckItem;
 
+import java.util.List;
+
 
 public interface CheckItemDao {
 
@@ -18,4 +20,6 @@ public interface CheckItemDao {
     public long findCountByCheckItemId(Integer id);
 
     public void edit(CheckItem checkItem);
+
+    public List<CheckItem> findAll();
 }

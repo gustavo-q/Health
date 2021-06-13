@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.gustavo.pojo.CheckItem;
 
+import java.util.List;
+
 /**
  * 检查项管理
  */
@@ -85,6 +87,23 @@ public class CheckItemController {
         }
 
     }
+
+    //查询所有
+    @RequestMapping("/findAll")
+    public Result findAll(){
+        try{
+            List<CheckItem> list = checkItemService.findAll();
+        return  new Result(true, MessageConstant.QUERY_CHECKITEM_SUCCESS,list);
+        }catch (Exception e){
+            e.printStackTrace();
+            //服务调用失败
+            return new Result(false, MessageConstant.QUERY_CHECKITEM_FAIL);
+        }
+    }
+
+
+
+
 
 
 }
