@@ -22,6 +22,7 @@ public class CheckItemServiceImpl implements CheckItemService {
     //注入DAO对象
     @Autowired
     private CheckItemDao checkItemDao;
+
     public void add(CheckItem checkItem) {
         checkItemDao.add(checkItem);
     }
@@ -38,5 +39,29 @@ public class CheckItemServiceImpl implements CheckItemService {
         long total = page.getTotal();
         List<CheckItem> rows = page.getResult();
         return new PageResult(total,rows);
+    }
+
+
+    //根据ID删除检查项
+    public void deleteById(Integer id) {
+        //判断当前检查项是否关联检查组
+        Long count = checkItemDao.findCountByCheckItemId(id);
+        if (count >0){
+            //当前检查项已经关联到检查组，不允许删除
+            new RuntimeException();
+        }
+        checkItemDao.deleteById(id);
+
+    }
+
+    @Override
+    public CheckItem findById(Integer id) {
+        CheckItem checkItem=checkItemDao.findById(id);
+        return checkItem;
+    }
+
+    @Override
+    public void edit(CheckItem checkItem) {
+        checkItemDao.edit(checkItem);
     }
 }

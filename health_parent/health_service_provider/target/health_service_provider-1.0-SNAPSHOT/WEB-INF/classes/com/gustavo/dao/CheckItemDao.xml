@@ -9,6 +9,7 @@
         (#{code},#{name},#{sex},#{age},#{price},#{type},#{remark},#{attention})
     </insert>
 
+
     <select id="selectByCondition" parameterType="String" resultType="com.gustavo.pojo.CheckItem">
         select * from t_checkitem
         <if test="value != null and value.length > 0">
