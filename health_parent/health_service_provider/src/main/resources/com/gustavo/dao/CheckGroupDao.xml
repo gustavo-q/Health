@@ -30,4 +30,46 @@
         </if>
     </select>
 
+<!--        查询单个-->
+    <select id="findById" parameterType="int" resultType="com.gustavo.pojo.CheckGroup">
+        select * from t_checkgroup where id = #{id}
+    </select>
+
+<!--    根据检查组ID查询关联的多个检查项ID，查询中间关系表-->
+    <select id="findCheckItemIdsByCheckGroupId" parameterType="int" resultType="int">
+        select checkitem_id from t_checkgroup_checkitem where checkgroup_id = #{id}
+    </select>
+
+    <!--根据ID动态修改检查组相关字段-->
+    <update id="edit" parameterType="com.gustavo.pojo.CheckGroup">
+        update t_checkgroup
+        <set>
+            <if test="name != null">
+                name = #{name},
+            </if>
+            <if test="sex != null">
+                sex = #{sex},
+            </if>
+            <if test="code != null">
+                code = #{code},
+            </if>
+            <if test="helpCode != null">
+                helpCode = #{helpCode},
+            </if>
+            <if test="attention != null">
+                attention = #{attention},
+            </if>
+            <if test="remark != null">
+                remark = #{remark},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--根据检查组ID清理关联的检查项信息，操作的表t_checkgroup_checkitem-->
+    <delete id="deleteAssocication" parameterType="int">
+        delete from t_checkgroup_checkitem where checkgroup_id = #{id}
+    </delete>
+
+
 </mapper>
