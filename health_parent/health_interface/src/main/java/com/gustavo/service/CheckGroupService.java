@@ -3,6 +3,7 @@ package com.gustavo.service;
 import com.gustavo.entity.PageResult;
 import com.gustavo.entity.QueryPageBean;
 import com.gustavo.pojo.CheckGroup;
+import com.gustavo.pojo.Setmeal;
 
 import java.util.List;
 import java.util.Map;
@@ -17,4 +18,8 @@ public interface CheckGroupService {
     public List<Integer> findCheckItemIdsByCheckGroupId(Integer id);
 
     public void edit(CheckGroup checkGroup, Integer[] checkitemIds);
+
+
+    public List<CheckGroup> findAll();
+
 }

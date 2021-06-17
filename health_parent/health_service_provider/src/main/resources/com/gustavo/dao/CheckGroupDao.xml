@@ -71,5 +71,10 @@
         delete from t_checkgroup_checkitem where checkgroup_id = #{id}
     </delete>
 
+<!--    查询所有的检查组-->
+    <select id="findAll" resultType="com.gustavo.pojo.CheckGroup">
+        select * from t_checkgroup
+    </select>
+
 
 </mapper>

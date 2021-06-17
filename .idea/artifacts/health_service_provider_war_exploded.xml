@@ -80,9 +80,6 @@
           <element id="library" level="project" name="Maven: org.springframework.security:spring-security-config:5.0.5.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.security:spring-security-taglibs:5.0.5.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.security:spring-security-acl:5.0.5.RELEASE" />
-          <element id="archive" name="fastdfs-client-java-1.28-SNAPSHOT.jar">
-            <element id="module-output" name="fastdfs-client-java" />
-          </element>
         </element>
       </element>
       <element id="directory" name="META-INF">

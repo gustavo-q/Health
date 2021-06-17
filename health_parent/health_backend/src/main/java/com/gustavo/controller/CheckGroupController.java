@@ -7,6 +7,7 @@ import com.gustavo.entity.PageResult;
 import com.gustavo.entity.QueryPageBean;
 import com.gustavo.entity.Result;
 import com.gustavo.pojo.CheckGroup;
+import com.gustavo.pojo.Setmeal;
 import com.gustavo.service.CheckGroupService;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -75,6 +76,17 @@ public class CheckGroupController {
             return new Result(false,MessageConstant.EDIT_CHECKGROUP_FAIL);
         }
         return new Result(true,MessageConstant.EDIT_CHECKGROUP_SUCCESS);
+    }
+
+    @RequestMapping("/findAll")
+    public Result findAll(){
+        try {
+            List<CheckGroup> list = checkGroupService.findAll();
+            return new Result(true,MessageConstant.ADD_SETMEAL_SUCCESS,list);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Result(false,MessageConstant.ADD_SETMEAL_FAIL);
+        }
     }
 
 }

@@ -8,7 +8,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/health_parent/pom.xml" />
-        <option value="$PROJECT_DIR$/health_parent/fastdfs-client-java-1.28/pom.xml" />
+        <option value="$PROJECT_DIR$/health_parent/fastdfs-client-java-1.27/pom.xml" />
       </list>
     </option>
   </component>

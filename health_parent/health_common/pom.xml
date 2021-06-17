@@ -141,10 +141,8 @@
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-taglibs</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.csource</groupId>
-            <artifactId>fastdfs-client-java</artifactId>
-            <version>1.28-SNAPSHOT</version>
-        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.csource/fastdfs-client-java -->
+
+
     </dependencies>
 </project>
