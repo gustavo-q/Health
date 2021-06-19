@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public class PmsUploadUtil {
     private static TrackerClient trackerClient;
-    private static String imgUrl = "http://172.20.10.5";
+
     private static String tracker = PmsUploadUtil.class.getResource("/fdfs_client.conf").getFile();// 获得配置文件的路径
     static {
         // 上传图片到服务器
@@ -29,9 +29,8 @@ public class PmsUploadUtil {
 
 
 
-
     public static String uploadImage(MultipartFile multipartFile) {
-
+          String imgUrl = "http://172.20.10.5";
 
         // 获得一个trackerServer的实例
         TrackerServer trackerServer = null;

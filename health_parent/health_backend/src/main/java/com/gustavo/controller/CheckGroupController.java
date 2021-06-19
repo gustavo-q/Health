@@ -82,10 +82,10 @@ public class CheckGroupController {
     public Result findAll(){
         try {
             List<CheckGroup> list = checkGroupService.findAll();
-            return new Result(true,MessageConstant.ADD_SETMEAL_SUCCESS,list);
+            return new Result(true,MessageConstant.QUERY_CHECKGROUP_SUCCESS,list);
         } catch (Exception e) {
             e.printStackTrace();
-            return new Result(false,MessageConstant.ADD_SETMEAL_FAIL);
+            return new Result(false,MessageConstant.QUERY_CHECKGROUP_FAIL);
         }
     }
 

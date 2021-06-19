@@ -142,7 +142,11 @@
             <artifactId>spring-security-taglibs</artifactId>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.csource/fastdfs-client-java -->
-
+        <dependency>
+            <groupId>org.csource</groupId>
+            <artifactId>fastdfs-client-java</artifactId>
+            <version>1.27-SNAPSHOT</version>
+        </dependency>
 
     </dependencies>
 </project>

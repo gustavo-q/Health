@@ -2,15 +2,18 @@ package com.gustavo.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.gustavo.constant.MessageConstant;
+import com.gustavo.constant.RedisConstant;
+import com.gustavo.entity.PageResult;
+import com.gustavo.entity.QueryPageBean;
 import com.gustavo.entity.Result;
 import com.gustavo.pojo.Setmeal;
 import com.gustavo.service.SetmealService;
+
 import com.gustavo.utils.PmsUploadUtil;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import redis.clients.jedis.JedisPool;
 
 import java.io.IOException;
 import java.util.UUID;
@@ -18,6 +21,10 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/setmeal")
 public class SetmealController {
+
+    //使用jedispool使用redis
+    @Autowired
+    private JedisPool jedisPool;
 
     @Reference
     private SetmealService setmealService;
@@ -29,6 +36,7 @@ public class SetmealController {
         try {
             String imgUrl = PmsUploadUtil.uploadImage(imgFile);
             System.out.println(imgUrl);
+            jedisPool.getResource().sadd(RedisConstant.SETMEAL_PIC_RESOURCES,imgUrl);
             return new Result(true, MessageConstant.PIC_UPLOAD_SUCCESS,imgUrl );
         } catch (Exception e) {
             e.printStackTrace();
@@ -46,6 +54,11 @@ public class SetmealController {
         }
 
         return new Result(true,MessageConstant.ADD_SETMEAL_SUCCESS);
+    }
+
+    @RequestMapping("/findPage")
+    public PageResult findPage(@RequestBody QueryPageBean queryPageBean){
+        return setmealService.pageQuery(queryPageBean);
     }
 
 

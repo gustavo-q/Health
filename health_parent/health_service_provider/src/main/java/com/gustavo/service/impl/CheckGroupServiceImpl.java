@@ -71,7 +71,7 @@ public class CheckGroupServiceImpl implements CheckGroupService {
     }
 
     //查找所有的检查组
-    @Override
+
     public List<CheckGroup> findAll() {
         return checkGroupDao.findAll();
     }
