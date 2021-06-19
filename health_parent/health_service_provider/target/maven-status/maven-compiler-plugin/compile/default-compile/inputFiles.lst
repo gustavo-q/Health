@@ -3,4 +3,6 @@
 /Users/gustavo/javaspace/SSM/Health/health_parent/health_service_provider/src/main/java/com/gustavo/service/impl/CheckItemServiceImpl.java
 /Users/gustavo/javaspace/SSM/Health/health_parent/health_service_provider/src/main/java/com/gustavo/dao/CheckGroupDao.java
 /Users/gustavo/javaspace/SSM/Health/health_parent/health_service_provider/src/main/java/com/gustavo/service/impl/CheckGroupServiceImpl.java
+/Users/gustavo/javaspace/SSM/Health/health_parent/health_service_provider/src/main/java/com/gustavo/dao/OrderSettingDao.java
+/Users/gustavo/javaspace/SSM/Health/health_parent/health_service_provider/src/main/java/com/gustavo/service/impl/OrderSettingServiceImpl.java
 /Users/gustavo/javaspace/SSM/Health/health_parent/health_service_provider/src/main/java/com/gustavo/service/impl/SetmealServiceImpl.java
