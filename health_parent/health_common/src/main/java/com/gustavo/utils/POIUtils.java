@@ -3,9 +3,13 @@ package com.gustavo.utils;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+
+import org.apache.poi.hssf.usermodel.HSSFDateUtil;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -111,6 +115,17 @@ public class POIUtils {
             cellValue = new SimpleDateFormat(DATE_FORMAT).format(cell.getDateCellValue());
             return cellValue;//"2019/10/10"
         }
+
+        if (0 == cell.getCellType()){
+            if (HSSFDateUtil.isCellDateFormatted(cell)) {
+                Date date = cell.getDateCellValue();
+                DateFormat formater = new SimpleDateFormat(
+                        "yyyy-MM-dd");
+                cellValue = formater.format(date);
+                return cellValue;
+            }
+        }
+
         //把数字当成String来读，避免出现1读成1.0的情况
         if(cell.getCellType() == Cell.CELL_TYPE_NUMERIC){
             cell.setCellType(Cell.CELL_TYPE_STRING);
