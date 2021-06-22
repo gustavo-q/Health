@@ -1,17 +1,17 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="health_service_provider:war exploded">
-    <output-path>$PROJECT_DIR$/health_parent/health_service_provider/target/health_service_provider-1.0-SNAPSHOT</output-path>
+  <artifact type="exploded-war" name="health_mobile:war exploded">
+    <output-path>$PROJECT_DIR$/health_parent/health_mobile/target/health_mobile-1.0-SNAPSHOT</output-path>
     <properties id="maven-jee-properties">
       <options>
         <exploded>true</exploded>
-        <module>health_service_provider</module>
+        <module>health_mobile</module>
         <packaging>war</packaging>
       </options>
     </properties>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="health_service_provider" />
+          <element id="module-output" name="health_mobile" />
         </element>
         <element id="directory" name="lib">
           <element id="archive" name="health_interface-1.0-SNAPSHOT.jar">
@@ -84,9 +84,9 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/health_parent/health_service_provider/target/health_service_provider-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/health_parent/health_mobile/target/health_mobile-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="health_service_provider/web/Web" />
+      <element id="javaee-facet-resources" facet="health_mobile/web/Web" />
     </root>
   </artifact>
 </component>

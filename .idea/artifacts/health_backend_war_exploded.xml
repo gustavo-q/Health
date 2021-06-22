@@ -78,6 +78,9 @@
           <element id="archive" name="fastdfs-client-java-1.27-SNAPSHOT.jar">
             <element id="module-output" name="fastdfs-client-java" />
           </element>
+          <element id="library" level="project" name="Maven: com.aliyun:aliyun-java-sdk-core:3.3.1" />
+          <element id="library" level="project" name="Maven: org.json:json:20170516" />
+          <element id="library" level="project" name="Maven: com.aliyun:aliyun-java-sdk-dysmsapi:1.0.0" />
         </element>
       </element>
       <element id="directory" name="META-INF">
