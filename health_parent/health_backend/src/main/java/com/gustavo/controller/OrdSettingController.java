@@ -6,6 +6,7 @@ import com.gustavo.entity.Result;
 import com.gustavo.pojo.OrderSetting;
 import com.gustavo.service.OrderSettingService;
 import com.gustavo.utils.POIUtils;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -59,7 +60,11 @@ public class OrdSettingController {
 
     }
 
-
+    /**
+     *根据月份查询对应的预约设置数据
+     * @param date
+     * @return
+     */
     @RequestMapping("/getOrderSettingByMonth")
     public Result getOrderSettingByMonth(String date){
         try {
@@ -73,5 +78,18 @@ public class OrdSettingController {
 
     }
 
+
+
+    //根据日期设置对应的预约设置数据
+    @RequestMapping("/editNumberByDate")
+    public Result editNumberByDate(@RequestBody OrderSetting orderSetting){
+        try{
+            orderSettingService.editNumberByDate(orderSetting);
+            return new Result(true,MessageConstant.ORDERSETTING_SUCCESS);
+        }catch (Exception e){
+            e.printStackTrace();
+            return new Result(false,MessageConstant.ORDERSETTING_FAIL);
+        }
+    }
 
 }

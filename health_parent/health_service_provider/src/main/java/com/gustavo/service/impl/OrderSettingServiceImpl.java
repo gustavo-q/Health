@@ -7,10 +7,7 @@ import com.gustavo.service.OrderSettingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * 预约设置服务
@@ -66,5 +63,21 @@ public class OrderSettingServiceImpl implements OrderSettingService {
             }
         }
         return result;
+    }
+
+    //根据日期设置对应的预约设置数据
+    @Override
+    public void editNumberByDate(OrderSetting orderSetting) {
+        Date orderDate = orderSetting.getOrderDate();
+        //根据日期查询是否已经进行了预约设置
+        long count = orderSettingDao.findCountByOrderDate(orderDate);
+        if(count > 0){
+            //当前日期已经进行了预约设置，需要执行更新操作
+            orderSettingDao.editNumberByOrderDate(orderSetting);
+        }else{
+            //当前日期没有就那些预约设置，需要执行插入操作
+            orderSettingDao.add(orderSetting);
+        }
+
     }
 }
