@@ -29,4 +29,69 @@
             where code = #{value} or name = #{value} or helpCode = #{value}
         </if>
     </select>
+
+<!--    查询所有-->
+    <select id="findAll" resultType="com.gustavo.pojo.Setmeal">
+        select * from t_setmeal
+    </select>
+
+<!--    根据id检查项个数-->
+    <select id="findCountByCheckgroupId" parameterType="int" resultType="long">
+        select count(checkgroup_id) from t_setmeal_checkgroup where setmeal_id = #{id}
+    </select>
+
+<!--    根据id删除套餐-->
+    <delete id="deleteById" parameterType="int">
+        delete from t_setmeal where id =#{id}
+    </delete>
+
+<!--    根据id查询单个套餐-->
+    <select id="findById" parameterType="int" resultType="com.gustavo.pojo.Setmeal">
+        select * from t_setmeal where id =#{id}
+    </select>
+
+
+    <!--    根据套餐ID查询关联的多个检查组ID，查询中间关系表-->
+    <select id="findCheckgroupIdsBySetmealId" parameterType="int" resultType="int">
+        select checkgroup_id from t_setmeal_checkgroup where setmeal_id = #{id}
+    </select>
+<!--    修改t_setmeal-->
+    <update id="edit" parameterType="com.gustavo.pojo.Setmeal">
+        update t_setmeal
+        <set>
+            <if test="name != null">
+                name =#{name},
+            </if>
+            <if test="code != null">
+                code =#{code},
+            </if>
+            <if test="helpCode != null">
+                helpCode =#{helpCode},
+            </if>
+            <if test="sex != null">
+                sex =#{sex},
+            </if>
+            <if test="age != null">
+                age =#{age},
+            </if>
+            <if test="price != null">
+                price =#{price},
+            </if>
+            <if test="remark != null">
+                remark =#{remark},
+            </if>
+            <if test="attention != null">
+                attention =#{attention},
+            </if>
+            <if test="img != null">
+                img =#{img},
+            </if>
+        </set>
+        where id=#{id}
+    </update>
+
+    <delete id="deleteAssocication" parameterType="int">
+           delete from t_setmeal_checkgroup where setmeal_id = #{id}
+    </delete>
+
 </mapper>

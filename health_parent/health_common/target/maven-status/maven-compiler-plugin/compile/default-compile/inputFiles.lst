@@ -1,3 +1,4 @@
+/Users/gustavo/javaspace/SSM/Health/health_parent/health_common/src/main/java/com/gustavo/utils/ValidateCodeUtils.java
 /Users/gustavo/javaspace/SSM/Health/health_parent/health_common/src/main/java/com/gustavo/constant/MessageConstant.java
 /Users/gustavo/javaspace/SSM/Health/health_parent/health_common/src/main/java/com/gustavo/pojo/Setmeal.java
 /Users/gustavo/javaspace/SSM/Health/health_parent/health_common/src/main/java/com/gustavo/pojo/CheckGroup.java
@@ -8,10 +9,12 @@
 /Users/gustavo/javaspace/SSM/Health/health_parent/health_common/src/main/java/com/gustavo/pojo/Role.java
 /Users/gustavo/javaspace/SSM/Health/health_parent/health_common/src/main/java/com/gustavo/pojo/Permission.java
 /Users/gustavo/javaspace/SSM/Health/health_parent/health_common/src/main/java/com/gustavo/pojo/User.java
+/Users/gustavo/javaspace/SSM/Health/health_parent/health_common/src/main/java/com/gustavo/constant/RedisMessageConstant.java
 /Users/gustavo/javaspace/SSM/Health/health_parent/health_common/src/main/java/com/gustavo/utils/POIUtils.java
 /Users/gustavo/javaspace/SSM/Health/health_parent/health_common/src/main/java/com/gustavo/entity/Result.java
 /Users/gustavo/javaspace/SSM/Health/health_parent/health_common/src/main/java/com/gustavo/pojo/Menu.java
 /Users/gustavo/javaspace/SSM/Health/health_parent/health_common/src/main/java/com/gustavo/constant/RedisConstant.java
+/Users/gustavo/javaspace/SSM/Health/health_parent/health_common/src/main/java/com/gustavo/utils/SMSUtils.java
 /Users/gustavo/javaspace/SSM/Health/health_parent/health_common/src/main/java/com/gustavo/utils/PmsUploadUtil.java
 /Users/gustavo/javaspace/SSM/Health/health_parent/health_common/src/main/java/com/gustavo/pojo/Order.java
 /Users/gustavo/javaspace/SSM/Health/health_parent/health_common/src/main/java/com/gustavo/entity/PageResult.java

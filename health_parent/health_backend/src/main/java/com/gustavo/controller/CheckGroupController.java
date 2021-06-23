@@ -89,4 +89,15 @@ public class CheckGroupController {
         }
     }
 
+//    @RequestMapping("/delete")
+//    public Result delete(Integer id){
+//        try {
+//            checkGroupService.delete(id);
+//            return new Result(false,MessageConstant.DELETE_CHECKGROUP_SUCCESS);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            return new Result(false,MessageConstant.DELETE_CHECKGROUP_FAIL);
+//        }
+//    }
+
 }

@@ -22,4 +22,5 @@ public interface CheckGroupService {
 
     public List<CheckGroup> findAll();
 
+//    public void delete(Integer id);
 }

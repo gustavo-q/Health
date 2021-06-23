@@ -76,6 +76,11 @@ public class CheckGroupServiceImpl implements CheckGroupService {
         return checkGroupDao.findAll();
     }
 
+//    @Override
+//    public void delete(Integer id) {
+//        Long lplplplllllpll
+//    }
+
 
     //建立检查组和检查项多对多关系
     private void setCheckGroupAndCheckItem(Integer checkGroupId, Integer[] checkitemIds) {
