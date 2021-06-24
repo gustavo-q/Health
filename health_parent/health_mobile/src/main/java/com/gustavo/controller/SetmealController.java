@@ -36,5 +36,18 @@ public class SetmealController {
         }
     }
 
+    //根据套餐ID查询套餐详情（包含基本信息，套餐检查组，检查组对应的检查项）
+    @RequestMapping("/findById")
+    public Result findById(int id){
+        try {
+            Setmeal setmeal = setmealService.findById(id);
+            return new Result(true,MessageConstant.QUERY_SETMEAL_SUCCESS,setmeal);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Result(false,MessageConstant.QUERY_SETMEAL_FAIL);
+
+        }
+    }
+
 
 }

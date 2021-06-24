@@ -3,6 +3,31 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.gustavo.dao.SetmealDao">
 
+    <resultMap id="baseResultMap" type="com.gustavo.pojo.Setmeal">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="code" property="code"/>
+        <result column="helpCode" property="helpCode"/>
+        <result column="sex" property="sex"/>
+        <result column="age" property="age"/>
+        <result column="price" property="price"/>
+        <result column="remark" property="remark"/>
+        <result column="attention" property="attention"/>
+        <result column="img" property="img"/>
+    </resultMap>
+
+    <resultMap id="findByIdResultMap" type="com.gustavo.pojo.Setmeal" extends="baseResultMap">
+        <!--        多对多映射-->
+        <collection property="checkGroups"
+                    ofType="com.gustavo.pojo.CheckGroup"
+                    select="com.gustavo.dao.CheckGroupDao.findCheckGroupById"
+                    column="id"
+        >
+
+        </collection>
+    </resultMap>
+
+
     <insert id="add" parameterType="com.gustavo.pojo.Setmeal">
         <!--通过mybatis框架提供的selectKey标签获得自增产生的ID值-->
         <selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id">
@@ -30,23 +55,23 @@
         </if>
     </select>
 
-<!--    查询所有-->
+    <!--    查询所有-->
     <select id="findAll" resultType="com.gustavo.pojo.Setmeal">
         select * from t_setmeal
     </select>
 
-<!--    根据id检查项个数-->
+    <!--    根据id检查项个数-->
     <select id="findCountByCheckgroupId" parameterType="int" resultType="long">
         select count(checkgroup_id) from t_setmeal_checkgroup where setmeal_id = #{id}
     </select>
 
-<!--    根据id删除套餐-->
+    <!--    根据id删除套餐-->
     <delete id="deleteById" parameterType="int">
         delete from t_setmeal where id =#{id}
     </delete>
 
-<!--    根据id查询单个套餐-->
-    <select id="findById" parameterType="int" resultType="com.gustavo.pojo.Setmeal">
+    <!--    根据id查询单个套餐-->
+    <select id="findById" parameterType="int" resultMap="findByIdResultMap">
         select * from t_setmeal where id =#{id}
     </select>
 
@@ -55,7 +80,7 @@
     <select id="findCheckgroupIdsBySetmealId" parameterType="int" resultType="int">
         select checkgroup_id from t_setmeal_checkgroup where setmeal_id = #{id}
     </select>
-<!--    修改t_setmeal-->
+    <!--    修改t_setmeal-->
     <update id="edit" parameterType="com.gustavo.pojo.Setmeal">
         update t_setmeal
         <set>
