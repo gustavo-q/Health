@@ -90,4 +90,16 @@ public class OrderServiceImpl implements OrderService {
 
         return new Result(true,MessageConstant.ORDER_SUCCESS,order.getId());
     }
+
+
+    //根据预约ID查询预约相关信息（体检人姓名、预约日期、套餐名称、预约类型）
+    public Map findById(Integer id) throws Exception{
+        Map map = orderDao.findById4Detail(id);
+        if(map != null){
+            //处理日期格式
+            Date orderDate = (Date) map.get("orderDate");
+            map.put("orderDate",DateUtils.parseDate2String(orderDate));
+        }
+        return map;
+    }
 }

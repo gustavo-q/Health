@@ -9,6 +9,7 @@ com/gustavo/pojo/Member.class
 com/gustavo/pojo/Menu.class
 com/gustavo/utils/POIUtils.class
 com/gustavo/pojo/Setmeal.class
+com/gustavo/utils/DateUtils.class
 com/gustavo/utils/ValidateCodeUtils.class
 com/gustavo/entity/Result.class
 com/gustavo/pojo/User.class
@@ -18,3 +19,4 @@ com/gustavo/pojo/Role.class
 com/gustavo/pojo/OrderSetting.class
 com/gustavo/entity/PageResult.class
 com/gustavo/pojo/CheckItem.class
+com/gustavo/utils/MD5Utils.class
