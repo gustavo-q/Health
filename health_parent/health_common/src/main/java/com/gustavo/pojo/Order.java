@@ -18,6 +18,8 @@ public class Order implements Serializable{
     private String orderStatus;//预约状态（是否到诊）
     private Integer setmealId;//体检套餐id
 
+
+
     public Order() {
     }
 
@@ -25,6 +27,11 @@ public class Order implements Serializable{
         this.id = id;
     }
 
+    public Order(Integer memberId, Date orderDate,Integer setmealId) {
+        this.memberId = memberId;
+        this.orderDate = orderDate;
+        this.setmealId = setmealId;
+    }
     public Order(Integer memberId, Date orderDate, String orderType, String orderStatus, Integer setmealId) {
         this.memberId = memberId;
         this.orderDate = orderDate;
