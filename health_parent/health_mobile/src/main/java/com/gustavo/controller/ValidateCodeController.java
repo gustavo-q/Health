@@ -32,4 +32,15 @@ public class ValidateCodeController {
     }
 
 
+
+    //用户快速登录发送验证码
+    @RequestMapping("/send40rder")
+    public Result send4Login(String telephone){
+        //随机生成4位数字验证码
+        Integer validateCode = 1234;
+        //将验证码保存到redis（5分钟）
+        jedisPool.getResource().setex(telephone + RedisMessageConstant.SENDTYPE_LOGIN,300,validateCode.toString());
+        return new Result(true, MessageConstant.LOGIN_SUCCESS);
+    }
+
 }
