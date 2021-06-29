@@ -6,6 +6,7 @@ import com.gustavo.entity.QueryPageBean;
 import com.gustavo.service.CheckItemService;
 import com.gustavo.constant.MessageConstant;
 import com.gustavo.entity.Result;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -49,6 +50,7 @@ public class CheckItemController {
 
     //根据id删除检查项
     @RequestMapping("/delete")
+    @PreAuthorize("hasAnyAuthority('CHECKITEM_DELETE')")
     public Result delete(Integer id){
         try {
             checkItemService.deleteById(id);

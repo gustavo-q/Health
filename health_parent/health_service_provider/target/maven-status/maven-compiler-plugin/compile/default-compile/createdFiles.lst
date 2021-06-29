@@ -1,11 +1,16 @@
 com/gustavo/dao/OrderDao.class
 com/gustavo/service/impl/CheckGroupServiceImpl.class
 com/gustavo/service/impl/OrderSettingServiceImpl.class
+com/gustavo/service/impl/UserServiceImpl.class
 com/gustavo/dao/CheckGroupDao.class
 com/gustavo/service/impl/SetmealServiceImpl.class
+com/gustavo/dao/UserDao.class
 com/gustavo/dao/MemberDao.class
+com/gustavo/service/impl/MemberServiceImpl.class
 com/gustavo/dao/SetmealDao.class
+com/gustavo/dao/RoleDao.class
 com/gustavo/dao/OrderSettingDao.class
 com/gustavo/service/impl/CheckItemServiceImpl.class
 com/gustavo/dao/CheckItemDao.class
 com/gustavo/service/impl/OrderServiceImpl.class
+com/gustavo/dao/PermissionDao.class
