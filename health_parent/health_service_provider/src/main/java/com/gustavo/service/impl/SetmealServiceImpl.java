@@ -154,6 +154,11 @@ public class SetmealServiceImpl implements SetmealService {
 
     }
 
+    @Override
+    public List<Map<String, Object>> findSetmealCount() {
+        return setmealDao.findSetmealCount();
+    }
+
     //图片传入redis大集合
     private void savePiv2Redis(String pic) {
         jedisPool.getResource().sadd(RedisConstant.SETMEAL_PIC_DB_RESOURCES,pic);

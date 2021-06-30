@@ -27,4 +27,6 @@ public interface SetmealDao {
     public void edit(Setmeal setmeal);
 
     public void deleteAssocication(Integer id);
+
+    public List<Map<String, Object>> findSetmealCount();
 }
