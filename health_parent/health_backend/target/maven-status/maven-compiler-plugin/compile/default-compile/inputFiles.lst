@@ -2,5 +2,6 @@
 /Users/gustavo/javaspace/SSM/Health/health_parent/health_backend/src/main/java/com/gustavo/controller/UserController.java
 /Users/gustavo/javaspace/SSM/Health/health_parent/health_backend/src/main/java/com/gustavo/controller/CheckItemController.java
 /Users/gustavo/javaspace/SSM/Health/health_parent/health_backend/src/main/java/com/gustavo/service/SpringSecurityUserService.java
+/Users/gustavo/javaspace/SSM/Health/health_parent/health_backend/src/main/java/com/gustavo/controller/ReportController.java
 /Users/gustavo/javaspace/SSM/Health/health_parent/health_backend/src/main/java/com/gustavo/controller/OrdSettingController.java
 /Users/gustavo/javaspace/SSM/Health/health_parent/health_backend/src/main/java/com/gustavo/controller/SetmealController.java

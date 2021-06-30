@@ -8,6 +8,9 @@ import com.gustavo.utils.MD5Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service(interfaceClass = MemberService.class)
 @Transactional
 public class MemberServiceImpl implements MemberService {
@@ -30,5 +33,18 @@ public class MemberServiceImpl implements MemberService {
             member.setPassword(password);
         }
         memberDao.add(member);
+    }
+
+    //查询月份中 会员数
+    @Override
+    public List<Integer> findMemberCountByMonths(List<String> months) {
+        List<Integer> memberCount = new ArrayList<>();
+        for (String month:months
+             ) {
+            String date = month+".31";
+            Integer count = memberDao.findMemberCountBeforeDate(date);
+            memberCount.add(count);
+        }
+        return memberCount;
     }
 }

@@ -3,4 +3,5 @@ com/gustavo/controller/SetmealController.class
 com/gustavo/controller/OrdSettingController.class
 com/gustavo/controller/UserController.class
 com/gustavo/controller/CheckItemController.class
+com/gustavo/controller/ReportController.class
 com/gustavo/service/SpringSecurityUserService.class
